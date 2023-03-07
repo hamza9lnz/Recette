@@ -11,7 +11,7 @@ export class SituationService {
   constructor(private http: HttpClient) { }
 
   public pcSituationSheet(startDateValue : string ,endDateValue : string){
-    return this.http.get(environment.backendHost+"/pcSituationSheet?dateD="+startDateValue+"&dateF="+endDateValue);
+    return this.http.get(environment.backendHost+"/pcSituationSheet?dateD="+startDateValue+"&dateF="+endDateValue, { responseType: 'arraybuffer' });
   }
   public pcSituationTotal(startDateValue: string ,endDateValue : string){
     return this.http.get(environment.backendHost+"/pcSituationTotal?dateD="+startDateValue+"&dateF="+endDateValue);

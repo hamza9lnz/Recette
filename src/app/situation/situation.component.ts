@@ -58,9 +58,9 @@ export class SituationComponent {
     }    
 
     if (this.typeSelect.nativeElement.value == 'PCE') {
-      this.situationService.getJsonData().subscribe({
+      this.situationService.pcSituationTotal(this.startDateValue, this.endDateValue).subscribe({
         next: (data: any) => {
-          this.jsonData = data;
+          this.jsonData = data.total;
           console.log(this.jsonData);
         },
         error: (err: any) => {
@@ -86,21 +86,14 @@ export class SituationComponent {
     );
   }
   downloadExcel() {
-    /* create workbook */
-    const wb: XLSX.WorkBook = XLSX.utils.book_new();
-    
-    /* create worksheet */
-    const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet([
-      { name: 'John', age: 25 },
-      { name: 'Jane', age: 30 },
-      { name: 'Bob', age: 35 }
-    ]);
-  
-    /* add worksheet to workbook */
-    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
-    
-    /* generate and download file */
-    const filename = 'example.xlsx';
-    XLSX.writeFile(wb, filename);
+    this.situationService.pcSituationSheet(this.startDateValue, this.endDateValue).subscribe(response => {
+      const blob = new Blob([response], { type: 'application/vnd.ms-excel' });
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'pcSituationSheet.xlsx';
+      link.click();
+      window.URL.revokeObjectURL(url);
+    });
   }
 }
