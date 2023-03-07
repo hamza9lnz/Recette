@@ -1,0 +1,121 @@
+<p-toast></p-toast>
+<div class="titlesituation">Filter</div>
+<br>
+<p-card class="card-wrapper">
+  <div class="card-content">
+    <div class="field-grid">
+      <div class="field">
+        <div class="input-container">
+          <label for="start-date" class="inline-label">Date de début</label>
+          <input type="date" id="start-date" class="aw-input inline-input" #startDate>
+        </div>
+      </div>
+      <div class="field">
+        <div class="input-container">
+          <label for="end-date" class="inline-label">Date de fin</label>
+          <input type="date" id="end-date" class="aw-input inline-input" #endDate>
+        </div>
+      </div>
+      <div class="field">
+        <div class="input-container">
+          <label for="type" class="inline-label">Type</label>
+          <select class="round-select" #typeSelect >
+            <option value="PCE">PCE</option>
+            <option value="CG">CG</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <div class="input-container">
+          <label for="type" class="inline-label">Opération</label>
+          <select class="round-select" #operationSelect>
+            <option value="Echange">Echange</option>
+            <option value="Duplicata">Duplicata</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="card-footer">
+    <button pButton type="button" label="Rechercher" icon="pi pi-search" class="search" (click)="onClick()"></button>
+  </div>  
+</p-card>
+<br>
+
+<div class="titlesituation">Résultats de recherche</div>
+
+<br>
+
+<p-card class="card-wrapper">
+  <div *ngIf="showResults">
+    <div class="card-content p-content2">
+      <div class="field-grid">
+        <div class="field">
+          <div class="input-container">
+            <label for="start-date" class="inline-label">Date de début :</label>
+            <label class="form-label" [textContent]="startDateValue"></label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="input-container">
+            <label for="end-date" class="inline-label">Date de fin :</label>
+            <label class="form-label" [textContent]="endDateValue"></label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="input-container">
+            <label for="type" class="inline-label">Type : </label>
+            <label class="form-label" [textContent]="typeValue"></label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="input-container">
+            <label for="type" class="inline-label">Opération :</label>
+            <label class="form-label" [textContent]="operationValue"></label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p-divider></p-divider>
+    <label for="start-date" class="inline-label">Matches</label>
+    <p-card [style]="styleOBJ"> 
+      <div class="card-content p-content2">
+        <div class="field-grid">
+          <div class="field">
+            <div class="input-container">
+              <label for="start-date" class="inline-label">Total d'opérations :</label>
+              <label class="form-label" >612</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="input-container">
+              <label for="end-date" class="inline-label">Montant total :</label>
+              <label class="form-label" >50000</label>
+            </div>
+          </div>       
+        </div>
+      </div>
+      <div class="card-footer">
+        <button pButton type="button" label="Télécharger" icon="pi pi-download" class="search"></button>
+      </div> 
+    </p-card>
+    <br>
+    <label for="start-date" class="inline-label">Non matches</label>
+    <p-card [style]="styleOBJ"> 
+      <div class="card-content p-content2">
+        <div class="field-grid">
+          <div class="field">
+            <div class="input-container">
+              <label for="start-date" class="inline-label">Total d'opérations :</label>
+              <label class="form-label" >5000</label>
+            </div>
+          </div>   
+        </div>
+      </div>
+      <div class="card-footer">
+        <button pButton type="button" label="Télécharger" icon="pi pi-download" class="search"></button>
+      </div> 
+    </p-card>
+  </div>
+</p-card>

@@ -1,0 +1,101 @@
+.appheader {
+    background-image: url('/assets/image/bgHeader.png');
+    background-position: 50%;
+    box-shadow: 0 1px 4px #00152914;
+    padding: 0;
+    height: 150px;
+  }
+.wrapper{
+    display: block;
+}  
+.img-ministere{
+    margin-top: 10px;
+    margin-left: 3%;
+    float: left;
+    width: 300px; 
+}
+.image-prepac{
+    margin-top: 3px;
+    margin-right: 5%;
+    float: right;
+    width: 150px;
+}
+.title-header{
+    text-align: center;
+    color: #3761ab;
+    line-height: 30px;
+    align-items: center;
+    width: 100%;
+    font-family: somar regular!important;
+    font-family: Somar-Regular,Fallback,sans-serif!important;
+    font-weight: 700;
+    margin-top: 3%;
+    font-size: 35px;
+    position: absolute; 
+}
+.side-nav-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    }
+.side-nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 30%;
+}
+
+@media only screen and (max-width: 1444px){
+.img-ministere{
+    left: 27%;
+    top: 8%;
+}
+.image-prepac{
+    width: 11%;
+    left: 57%;
+}
+}
+@media only screen and (max-width: 1250px){
+.appheader{
+    height: 130px;
+}
+.img-ministere{
+    left: 26%;
+    top: 5%;
+    width: 23%;
+}
+.image-prepac{
+    width: 12%;
+    left: 58%;
+    top: 14%;
+}
+}
+@media only screen and (max-width: 1000px){
+.appheader{
+    height: 116px;
+}
+}
+@media only screen and (max-width: 844px){
+.appheader{
+    height: 100px;
+}
+.title-header{
+    font-size: 32px;
+} 
+}
+@media only screen and (max-width: 730px){
+.appheader{
+    height: 70px;
+}
+.title-header{
+    font-size: 22px;
+} 
+}
+@media only screen and (max-width: 391px){
+.appheader{
+    height: 49px;
+}
+.title-header{
+    font-size: 12px;
+}    
+}

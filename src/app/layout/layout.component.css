@@ -1,0 +1,50 @@
+main {
+    position: absolute;
+    width: 100%;
+    top: 9rem;
+    z-index: 1;
+}
+app-side-nav {
+    position: absolute;
+    left: 0rem;
+    width: 60px;
+    height: calc(100vh);;
+    background-color: white;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+app-side-nav:hover {
+    width: 200px;
+}
+.display-area {
+    position: absolute;
+    left: 70px;
+    width: calc(100% - 70px);
+}
+.display-area.hovered {
+    width : calc(100% - 200px);
+    left: 200px;
+}
+
+@media only screen and (max-width: 550px) {
+    .display-area.hovered  {
+        position: static;
+        width: 100%;
+        left: 300px;
+    }
+}
+@media (max-height: 920px) {
+    app-side-nav {
+        height: calc(100vh + 200px);
+    }
+}
+@media (max-height: 800px) {
+    app-side-nav {
+        height: calc(100vh + 400px);
+    }
+}
+@media (max-height: 700px) {
+    app-side-nav {
+        height: calc(100vh + 600px);
+    }
+}

@@ -1,0 +1,102 @@
+.space{
+    height: 100px;
+}
+.card {
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    width: 30%; /* Change the width to your desired value */
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-color: transparent;
+}
+h4{
+    color: #3761AB;
+}
+.aw-input {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+.aw-input {
+    box-shadow: 0 2px 6px #13124212;
+    border-radius: 46px;
+    width: 100%;
+    border: 1px solid #eff0f7;
+    padding: 0.75rem 1.25rem;
+    font-weight: 600;
+}
+.psd{
+    text-decoration: none;
+    color: #3761AB;
+    font-size: 16px;
+}
+.search {
+    background-color: #3761AB;
+    border-color: transparent;
+    border-radius: 46px;
+}
+.search:hover {
+    background-color: transparent;
+    border-color: #3761AB;
+    color: #3761AB; /* label color when hovering */
+}
+.container > * {
+    margin-bottom: 30px;
+}
+.input-container {
+    position: relative;
+    margin: 20px 0;
+    width: 70%;
+}
+  
+.input-container input {
+padding-left: 40px;
+}
+
+.input-container i {
+position: absolute;
+left: 10px;
+top: 50%;
+transform: translateY(-50%);
+}
+
+@media only screen and (max-width: 1444px){
+    .card {
+        width: 35%;
+    }        
+}
+@media only screen and (max-width: 1200px){
+    .card {
+        width: 40%;
+    }        
+}
+@media only screen and (max-width: 1000px){
+    .card {
+        width: 45%;
+    }        
+}
+@media only screen and (max-width: 844px){
+    .card {
+        width: 45%;
+    }        
+    .input-container {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 730px){
+    .card {
+        width: 50%;
+    }        
+    .input-container {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 580px){
+    .card {
+        width: 100%;
+    }        
+    .input-container {
+        width: 100%;
+    }
+}
